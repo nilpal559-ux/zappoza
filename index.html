@@ -1,13 +1,17 @@
 ```html
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Zappoza - Smart Shopping</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -21,13 +25,16 @@
         }
 
         /* HEADER */
+
         header {
             background: #111;
             color: white;
             padding: 18px 5%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -51,11 +58,15 @@
             color: #ff9900;
         }
 
+
         /* HERO */
+
         .hero {
             text-align: center;
             padding: 55px 20px;
-            background: linear-gradient(135deg, #fff1d6, #ffffff);
+
+            background:
+                linear-gradient(135deg, #fff1d6, #ffffff);
         }
 
         .hero h1 {
@@ -75,14 +86,21 @@
         .search {
             width: 90%;
             max-width: 650px;
+
             padding: 15px 20px;
+
             border: 1px solid #ccc;
+
             border-radius: 30px;
+
             font-size: 16px;
+
             outline: none;
         }
 
+
         /* SECTION */
+
         .section {
             padding: 40px 5%;
         }
@@ -92,52 +110,80 @@
             margin-bottom: 25px;
         }
 
+
         /* CATEGORIES */
+
         .categories {
             display: flex;
+
             flex-wrap: wrap;
+
             justify-content: center;
+
             gap: 12px;
         }
 
         .category-btn {
             border: none;
+
             background: white;
+
             padding: 13px 20px;
+
             border-radius: 25px;
+
             cursor: pointer;
+
             font-size: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.08);
         }
 
         .category-btn:hover {
             background: #ff9900;
         }
 
+
         /* PRODUCTS */
+
         .products {
             display: grid;
+
             grid-template-columns:
                 repeat(auto-fit, minmax(220px, 1fr));
+
             gap: 20px;
         }
 
         .product {
             background: white;
+
             padding: 20px;
+
             border-radius: 12px;
+
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 2px 10px rgba(0,0,0,0.08);
         }
 
         .product-image {
             height: 160px;
+
             background: #eee;
+
             border-radius: 10px;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             font-size: 65px;
+
             margin-bottom: 15px;
         }
 
@@ -151,19 +197,29 @@
         }
 
         .price {
-            font-size: 22px;
+            font-size: 20px;
+
             font-weight: bold;
+
             margin: 12px 0;
         }
 
+
         /* BUTTON */
+
         .btn {
             display: inline-block;
+
             background: #ff9900;
+
             color: #111;
+
             padding: 12px 20px;
+
             border-radius: 25px;
+
             text-decoration: none;
+
             font-weight: bold;
         }
 
@@ -171,29 +227,43 @@
             background: #ffb52e;
         }
 
+
         /* NO RESULT */
+
         .no-result {
             display: none;
+
             text-align: center;
+
             font-size: 18px;
+
             padding: 30px;
         }
 
+
         /* FOOTER */
+
         footer {
             background: #111;
+
             color: white;
+
             text-align: center;
+
             padding: 30px;
+
             margin-top: 30px;
         }
 
         footer p {
             margin-top: 8px;
+
             color: #ccc;
         }
 
+
         /* MOBILE */
+
         @media (max-width: 600px) {
 
             .hero h1 {
@@ -202,19 +272,26 @@
 
             nav {
                 width: 100%;
+
                 text-align: center;
             }
 
             .product-image {
                 height: 140px;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
 <!-- HEADER -->
+
 <header>
 
     <div class="logo">
@@ -222,16 +299,30 @@
     </div>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#">
+            Home
+        </a>
+
+        <a href="#categories">
+            Categories
+        </a>
+
+        <a href="#products">
+            Products
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
     </nav>
 
 </header>
 
 
-<!-- HERO + SEARCH -->
+<!-- HERO -->
+
 <section class="hero">
 
     <h1>
@@ -253,40 +344,59 @@
 
 
 <!-- CATEGORIES -->
-<section class="section" id="categories">
 
-    <h2>🛍️ Categories</h2>
+<section
+    class="section"
+    id="categories">
+
+    <h2>
+        🛍️ Categories
+    </h2>
 
     <div class="categories">
 
         <button
             class="category-btn"
             onclick="filterCategory('all')">
+
             All
+
         </button>
+
 
         <button
             class="category-btn"
             onclick="filterCategory('mobile')">
+
             📱 Mobile
+
         </button>
+
 
         <button
             class="category-btn"
             onclick="filterCategory('electronics')">
+
             💻 Electronics
+
         </button>
+
 
         <button
             class="category-btn"
             onclick="filterCategory('fashion')">
+
             👕 Fashion
+
         </button>
+
 
         <button
             class="category-btn"
             onclick="filterCategory('home')">
+
             🏠 Home
+
         </button>
 
     </div>
@@ -295,190 +405,340 @@
 
 
 <!-- PRODUCTS -->
-<section class="section" id="products">
 
-    <h2>🔥 Featured Products</h2>
+<section
+    class="section"
+    id="products">
 
-    <div class="products" id="productList">
+    <h2>
+        🔥 Featured Products
+    </h2>
 
 
-        <!-- PRODUCT 1 -->
-        <div class="product" data-category="mobile">
+    <div
+        class="products"
+        id="productList">
+
+
+        <!-- RIEKA PRODUCT -->
+
+        <div
+            class="product"
+            data-category="fashion">
 
             <div class="product-image">
-                📱
+
+                👗
+
             </div>
 
-            <h3>Smartphone</h3>
+
+            <h3>
+                RIEKA Embroidered Dress
+            </h3>
+
 
             <p>
-                Latest smartphone information
+                Embroidered fashion product
             </p>
 
+
             <div class="price">
-                ₹XX,XXX
+
+                Amazon पर कीमत देखें
+
             </div>
 
+
             <a
-                href="#"
+                href="product.html"
                 class="btn">
-                🛒 Amazon पर देखें
+
+                🛍️ Product देखें
+
             </a>
 
         </div>
 
 
         <!-- PRODUCT 2 -->
-        <div class="product" data-category="electronics">
+
+        <div
+            class="product"
+            data-category="mobile">
 
             <div class="product-image">
-                🎧
+
+                📱
+
             </div>
 
-            <h3>Wireless Earbuds</h3>
+
+            <h3>
+                Smartphone
+            </h3>
+
 
             <p>
-                Music aur calls ke liye
+                Latest smartphone information
             </p>
 
+
             <div class="price">
-                ₹X,XXX
+
+                ₹XX,XXX
+
             </div>
+
 
             <a
                 href="#"
                 class="btn">
+
                 🛒 Amazon पर देखें
+
             </a>
 
         </div>
 
 
         <!-- PRODUCT 3 -->
-        <div class="product" data-category="electronics">
+
+        <div
+            class="product"
+            data-category="electronics">
 
             <div class="product-image">
-                ⌚
+
+                🎧
+
             </div>
 
-            <h3>Smart Watch</h3>
+
+            <h3>
+                Wireless Earbuds
+            </h3>
+
 
             <p>
-                Smartwatch information
+                Music aur calls ke liye
             </p>
 
+
             <div class="price">
+
                 ₹X,XXX
+
             </div>
+
 
             <a
                 href="#"
                 class="btn">
+
                 🛒 Amazon पर देखें
+
             </a>
 
         </div>
 
 
         <!-- PRODUCT 4 -->
-        <div class="product" data-category="fashion">
+
+        <div
+            class="product"
+            data-category="electronics">
 
             <div class="product-image">
-                👕
+
+                ⌚
+
             </div>
 
-            <h3>T-Shirt</h3>
+
+            <h3>
+                Smart Watch
+            </h3>
+
 
             <p>
-                Fashion collection
+                Smartwatch information
             </p>
 
+
             <div class="price">
-                ₹XXX
+
+                ₹X,XXX
+
             </div>
+
 
             <a
                 href="#"
                 class="btn">
+
                 🛒 Amazon पर देखें
+
             </a>
 
         </div>
 
 
         <!-- PRODUCT 5 -->
-        <div class="product" data-category="home">
+
+        <div
+            class="product"
+            data-category="fashion">
 
             <div class="product-image">
-                🍳
+
+                👕
+            
             </div>
 
-            <h3>Kitchen Product</h3>
+
+            <h3>
+                T-Shirt
+            </h3>
+
 
             <p>
-                Useful kitchen items
+                Fashion collection
             </p>
 
+
             <div class="price">
+
                 ₹XXX
+
             </div>
+
 
             <a
                 href="#"
                 class="btn">
+
                 🛒 Amazon पर देखें
+
             </a>
 
         </div>
 
 
         <!-- PRODUCT 6 -->
-        <div class="product" data-category="home">
+
+        <div
+            class="product"
+            data-category="home">
 
             <div class="product-image">
-                🪑
+
+                🍳
+
             </div>
 
-            <h3>Home Product</h3>
+
+            <h3>
+                Kitchen Product
+            </h3>
+
+
+            <p>
+                Useful kitchen items
+            </p>
+
+
+            <div class="price">
+
+                ₹XXX
+
+            </div>
+
+
+            <a
+                href="#"
+                class="btn">
+
+                🛒 Amazon पर देखें
+
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div
+            class="product"
+            data-category="home">
+
+            <div class="product-image">
+
+                🪑
+
+            </div>
+
+
+            <h3>
+                Home Product
+            </h3>
+
 
             <p>
                 Useful home products
             </p>
 
+
             <div class="price">
+
                 ₹XXX
+
             </div>
+
 
             <a
                 href="#"
                 class="btn">
+
                 🛒 Amazon पर देखें
+
             </a>
 
         </div>
 
+
     </div>
 
 
-    <div id="noResult" class="no-result">
+    <div
+        id="noResult"
+        class="no-result">
+
         😕 कोई product नहीं मिला।
+
     </div>
 
 </section>
 
 
 <!-- FOOTER -->
+
 <footer id="contact">
 
-    <h3>Zappoza</h3>
+    <h3>
+        Zappoza
+    </h3>
+
 
     <p>
         Useful products aur shopping information.
     </p>
 
+
     <p>
         Affiliate links may be used on this website.
     </p>
+
 
     <p>
         © 2026 Zappoza
@@ -488,13 +748,16 @@
 
 
 <!-- SEARCH + CATEGORY JAVASCRIPT -->
+
 <script>
 
 const searchBox =
     document.getElementById("searchBox");
 
+
 const products =
     document.querySelectorAll(".product");
+
 
 const noResult =
     document.getElementById("noResult");
@@ -502,35 +765,51 @@ const noResult =
 
 /* SEARCH */
 
-searchBox.addEventListener("input", function() {
+searchBox.addEventListener(
+    "input",
+    function() {
 
-    const searchText =
-        this.value.toLowerCase();
+        const searchText =
+            this.value.toLowerCase();
 
-    let found = 0;
 
-    products.forEach(function(product) {
+        let found = 0;
 
-        const productText =
-            product.innerText.toLowerCase();
 
-        if (productText.includes(searchText)) {
+        products.forEach(
+            function(product) {
 
-            product.style.display = "block";
-            found++;
+                const productText =
+                    product.innerText.toLowerCase();
 
-        } else {
 
-            product.style.display = "none";
+                if (
+                    productText.includes(searchText)
+                ) {
 
-        }
+                    product.style.display =
+                        "block";
 
-    });
+                    found++;
 
-    noResult.style.display =
-        found === 0 ? "block" : "none";
+                } else {
 
-});
+                    product.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+        noResult.style.display =
+            found === 0
+                ? "block"
+                : "none";
+
+    }
+);
 
 
 /* CATEGORY FILTER */
@@ -539,31 +818,42 @@ function filterCategory(category) {
 
     let found = 0;
 
-    products.forEach(function(product) {
 
-        if (
-            category === "all" ||
-            product.dataset.category === category
-        ) {
+    products.forEach(
+        function(product) {
 
-            product.style.display = "block";
-            found++;
+            if (
+                category === "all" ||
+                product.dataset.category === category
+            ) {
 
-        } else {
+                product.style.display =
+                    "block";
 
-            product.style.display = "none";
+                found++;
+
+            } else {
+
+                product.style.display =
+                    "none";
+
+            }
 
         }
+    );
 
-    });
 
     noResult.style.display =
-        found === 0 ? "block" : "none";
+        found === 0
+            ? "block"
+            : "none";
 
 }
 
 </script>
 
+
 </body>
+
 </html>
 ```
