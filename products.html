@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zappoza - Products</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .title {
+            text-align: center;
+            padding: 35px 10px 15px;
+        }
+
+        .title h1 {
+            margin-bottom: 10px;
+        }
+
+        .search {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search input {
+            width: 80%;
+            max-width: 600px;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .categories {
+            text-align: center;
+            margin: 25px 10px;
+        }
+
+        .categories button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #ddd;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px 5%;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .product .image {
+            font-size: 70px;
+            padding: 20px;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff9900;
+            color: #111;
+            padding: 11px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #noResult {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            font-size: 20px;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media(max-width:600px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .search input {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Zappoza</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="product.html">Details</a>
+    </nav>
+</header>
+
+
+<section class="title">
+    <h1>🛍️ Zappoza Products</h1>
+    <p>अपने पसंदीदा products खोजें</p>
+</section>
+
+
+<div class="search">
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="🔍 Product search करें..."
+    >
+</div>
+
+
+<div class="categories">
+
+    <button onclick="filterCategory('all')">
+        All
+    </button>
+
+    <button onclick="filterCategory('mobile')">
+        📱 Mobile
+    </button>
+
+    <button onclick="filterCategory('electronics')">
+        💻 Electronics
+    </button>
+
+    <button onclick="filterCategory('fashion')">
+        👕 Fashion
+    </button>
+
+    <button onclick="filterCategory('home')">
+        🏠 Home
+    </button>
+
+</div>
+
+
+<section class="products" id="products">
+
+
+    <div class="product" data-category="mobile">
+
+        <div class="image">📱</div>
+
+        <h3>Smartphone</h3>
+
+        <p>Latest smartphone category</p>
+
+        <div class="price">₹ Price देखें</div>
+
+        <a href="#"
+           class="btn"
+           target="_blank"
+           rel="nofollow sponsored">
+           🛒 Amazon पर देखें
+        </a>
+
+    </div>
+
+
+    <div class="product" data-category="electronics">
+
+        <div class="image">🎧</div>
+
+        <h3>Wireless Headphones</h3>
+
+        <p>Music और entertainment के लिए</p>
+
+        <div class="price">₹ Price देखें</div>
+
+        <a href="#"
+           class="btn"
+           target="_blank"
+           rel="nofollow sponsored">
+           🛒 Amazon पर देखें
+        </a>
+
+    </div>
+
+
+    <div class="product" data-category="electronics">
+
+        <div class="image">⌚</div>
+
+        <h3>Smart Watch</h3>
+
+        <p>Smart watch category</p>
+
+        <div class="price">₹ Price देखें</div>
+
+        <a href="#"
+           class="btn"
+           target="_blank"
+           rel="nofollow sponsored">
+           🛒 Amazon पर देखें
+        </a>
+
+    </div>
+
+
+    <div class="product" data-category="fashion">
+
+        <div class="image">👕</div>
+
+        <h3>Men's T-Shirt</h3>
+
+        <p>Fashion और daily wear</p>
+
+        <div class="price">₹ Price देखें</div>
+
+        <a href="#"
+           class="btn"
+           target="_blank"
+           rel="nofollow sponsored">
+           🛒 Amazon पर देखें
+        </a>
+
+    </div>
+
+
+    <div class="product" data-category="fashion">
+
+        <div class="image">👟</div>
+
+        <h3>Sports Shoes</h3>
+
+        <p>Sports shoes category</p>
+
+        <div class="price">₹ Price देखें</div>
+
+        <a href="#"
+           class="btn"
+           target="_blank"
+           rel="nofollow sponsored">
+           🛒 Amazon पर देखें
+        </a>
+
+    </div>
+
+
+    <div class="product" data-category="home">
+
+        <div class="image">🏠</div>
+
+        <h3>Home Accessories</h3>
+
+        <p>Useful home products</p>
+
+        <div class="price">₹ Price देखें</div>
+
+        <a href="#"
+           class="btn"
+           target="_blank"
+           rel="nofollow sponsored">
+           🛒 Amazon पर देखें
+        </a>
+
+    </div>
+
+
+</section>
+
+
+<div id="noResult">
+    ❌ कोई product नहीं मिला।
+</div>
+
+
+<footer>
+    <p>© 2026 Zappoza. All Rights Reserved.</p>
+
+    <p>
+        Affiliate Disclosure: कुछ links affiliate links हो सकते हैं।
+    </p>
+</footer>
+
+
+<script>
+
+    const searchBox = document.getElementById("searchBox");
+
+    const products = document.querySelectorAll(".product");
+
+    const noResult = document.getElementById("noResult");
+
+
+    searchBox.addEventListener("input", function() {
+
+        const searchText = this.value.toLowerCase();
+
+        let found = 0;
+
+
+        products.forEach(function(product) {
+
+            const productText =
+                product.innerText.toLowerCase();
+
+
+            if (productText.includes(searchText)) {
+
+                product.style.display = "block";
+
+                found++;
+
+            } else {
+
+                product.style.display = "none";
+
+            }
+
+        });
+
+
+        noResult.style.display =
+            found === 0 ? "block" : "none";
+
+    });
+
+
+    function filterCategory(category) {
+
+        let found = 0;
+
+
+        products.forEach(function(product) {
+
+            if (
+                category === "all" ||
+                product.dataset.category === category
+            ) {
+
+                product.style.display = "block";
+
+                found++;
+
+            } else {
+
+                product.style.display = "none";
+
+            }
+
+        });
+
+
+        noResult.style.display =
+            found === 0 ? "block" : "none";
+
+    }
+
+</script>
+
+</body>
+</html>

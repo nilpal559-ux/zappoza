@@ -1,0 +1,453 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Zappoza - Product Details</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #111;
+            color: white;
+            padding: 18px 5%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff9900;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        nav a:hover {
+            color: #ff9900;
+        }
+
+
+        /* MAIN */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+
+        /* PRODUCT */
+
+        .product-box {
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 40px;
+
+            box-shadow:
+                0 3px 15px rgba(0,0,0,0.08);
+        }
+
+
+        /* PRODUCT IMAGE */
+
+        .product-image {
+
+            min-height: 350px;
+
+            background: #eee;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 120px;
+        }
+
+
+        /* DETAILS */
+
+        .details h1 {
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+        .rating {
+
+            font-size: 18px;
+
+            margin-bottom: 15px;
+        }
+
+        .price {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            margin: 20px 0;
+        }
+
+
+        .details h2 {
+
+            margin: 20px 0 10px;
+        }
+
+
+        .details ul {
+
+            padding-left: 20px;
+
+            line-height: 1.8;
+        }
+
+
+        /* AMAZON BUTTON */
+
+        .amazon-btn {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            background: #ff9900;
+
+            color: #111;
+
+            padding: 15px 25px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 17px;
+        }
+
+        .amazon-btn:hover {
+
+            background: #ffb52e;
+        }
+
+
+        /* DISCLOSURE */
+
+        .note {
+
+            margin-top: 25px;
+
+            background: #fff8e8;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* BACK BUTTON */
+
+        .back-btn {
+
+            display: inline-block;
+
+            margin-bottom: 20px;
+
+            color: #111;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            background: #111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            margin-top: 40px;
+        }
+
+        footer p {
+
+            margin-top: 8px;
+
+            color: #ccc;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                flex-direction: column;
+            }
+
+            nav {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+            .product-box {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .product-image {
+
+                min-height: 250px;
+
+                font-size: 90px;
+            }
+
+            .details h1 {
+
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        Zappoza
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#categories">
+            Categories
+        </a>
+
+        <a href="index.html#products">
+            Products
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+
+    <a
+        href="index.html"
+        class="back-btn">
+        ← वापस Home पर जाएँ
+    </a>
+
+
+    <div class="product-box">
+
+
+        <!-- PRODUCT IMAGE -->
+
+        <div class="product-image">
+
+            📱
+
+        </div>
+
+
+        <!-- PRODUCT DETAILS -->
+
+        <div class="details">
+
+
+            <h1>
+                Smartphone
+            </h1>
+
+
+            <div class="rating">
+
+                ⭐⭐⭐⭐⭐
+
+            </div>
+
+
+            <p>
+
+                यह एक demo product page है।
+                यहाँ आप किसी वास्तविक product की
+                जानकारी, features और review जोड़ सकते हैं।
+
+            </p>
+
+
+            <div class="price">
+
+                ₹XX,XXX
+
+            </div>
+
+
+            <h2>
+                Key Features
+            </h2>
+
+
+            <ul>
+
+                <li>
+                    Modern design
+                </li>
+
+                <li>
+                    Good performance
+                </li>
+
+                <li>
+                    Useful everyday features
+                </li>
+
+                <li>
+                    Multiple options available
+                </li>
+
+            </ul>
+
+
+            <!-- AMAZON AFFILIATE BUTTON -->
+
+            <a
+                href="#"
+                class="amazon-btn"
+                target="_blank"
+                rel="nofollow sponsored">
+
+                🛒 Amazon पर देखें
+
+            </a>
+
+
+            <!-- AFFILIATE DISCLOSURE -->
+
+            <div class="note">
+
+                <strong>
+                    Affiliate Disclosure:
+                </strong>
+
+                <br>
+
+                इस website पर कुछ links
+                affiliate links हो सकते हैं।
+                Eligible purchase होने पर
+                हमें commission मिल सकता है।
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        Zappoza
+    </h3>
+
+    <p>
+        Useful products aur shopping information.
+    </p>
+
+    <p>
+        © 2026 Zappoza
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
