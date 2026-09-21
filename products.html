@@ -1,418 +1,409 @@
+```html
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Zappoza - Products</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Zappoza - RIEKA Product</title>
 
     <style>
+
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
             background: #f5f5f5;
+            color: #222;
         }
+
+        /* HEADER */
 
         header {
             background: #111;
             color: white;
             padding: 18px 5%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff9900;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 15px;
         }
 
-        .title {
-            text-align: center;
-            padding: 35px 10px 15px;
+        nav a:hover {
+            color: #ff9900;
         }
 
-        .title h1 {
-            margin-bottom: 10px;
+        /* MAIN */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
         }
 
-        .search {
-            text-align: center;
-            margin: 20px;
-        }
+        /* PRODUCT */
 
-        .search input {
-            width: 80%;
-            max-width: 600px;
-            padding: 14px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .categories {
-            text-align: center;
-            margin: 25px 10px;
-        }
-
-        .categories button {
-            padding: 10px 18px;
-            margin: 5px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            background: #ddd;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            padding: 20px 5%;
-        }
-
-        .product {
+        .product-box {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 30px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+            box-shadow:
+                0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        /* PRODUCT IMAGE */
+
+        .product-image {
+            min-height: 350px;
+
+            background: #eee;
+            border-radius: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 90px;
             text-align: center;
         }
 
-        .product .image {
-            font-size: 70px;
-            padding: 20px;
+        /* DETAILS */
+
+        .details h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
         }
 
-        .product h3 {
-            margin: 10px 0;
+        .rating {
+            font-size: 18px;
+            margin-bottom: 15px;
         }
 
         .price {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
-            margin: 12px;
+            margin: 20px 0;
         }
 
-        .btn {
+        .details h2 {
+            margin: 20px 0 10px;
+        }
+
+        .details ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        /* AMAZON BUTTON */
+
+        .amazon-btn {
             display: inline-block;
+
+            margin-top: 25px;
+
             background: #ff9900;
             color: #111;
-            padding: 11px 18px;
-            border-radius: 6px;
+
+            padding: 15px 25px;
+
+            border-radius: 30px;
+
             text-decoration: none;
+
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .amazon-btn:hover {
+            background: #ffb52e;
+        }
+
+        /* DISCLOSURE */
+
+        .note {
+            margin-top: 25px;
+
+            background: #fff8e8;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        /* BACK BUTTON */
+
+        .back-btn {
+            display: inline-block;
+
+            margin-bottom: 20px;
+
+            color: #111;
+
+            text-decoration: none;
+
             font-weight: bold;
         }
 
-        #noResult {
-            display: none;
-            text-align: center;
-            padding: 30px;
-            font-size: 20px;
-        }
+        /* FOOTER */
 
         footer {
             background: #111;
+
             color: white;
+
             text-align: center;
-            padding: 25px;
-            margin-top: 30px;
+
+            padding: 30px;
+
+            margin-top: 40px;
         }
 
-        @media(max-width:600px) {
+        footer p {
+            margin-top: 8px;
+            color: #ccc;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
             header {
                 flex-direction: column;
-                gap: 12px;
             }
 
-            nav a {
-                margin: 5px;
+            nav {
+                width: 100%;
+                text-align: center;
             }
 
-            .search input {
-                width: 95%;
+            .product-box {
+                grid-template-columns: 1fr;
             }
+
+            .product-image {
+                min-height: 250px;
+                font-size: 70px;
+            }
+
+            .details h1 {
+                font-size: 26px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <div class="logo">Zappoza</div>
+
+    <div class="logo">
+        Zappoza
+    </div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="product.html">Details</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#categories">
+            Categories
+        </a>
+
+        <a href="index.html#products">
+            Products
+        </a>
+
     </nav>
+
 </header>
 
 
-<section class="title">
-    <h1>🛍️ Zappoza Products</h1>
-    <p>अपने पसंदीदा products खोजें</p>
-</section>
+<!-- MAIN -->
+
+<div class="container">
 
 
-<div class="search">
-    <input
-        type="text"
-        id="searchBox"
-        placeholder="🔍 Product search करें..."
-    >
+    <a
+        href="index.html"
+        class="back-btn">
+
+        ← वापस Home पर जाएँ
+
+    </a>
+
+
+    <div class="product-box">
+
+
+        <!-- PRODUCT IMAGE -->
+
+        <div class="product-image">
+
+            👗
+
+        </div>
+
+
+        <!-- PRODUCT DETAILS -->
+
+        <div class="details">
+
+
+            <h1>
+                RIEKA Embroidered Dress
+            </h1>
+
+
+            <div class="rating">
+
+                ⭐⭐⭐⭐⭐
+
+            </div>
+
+
+            <p>
+
+                RIEKA का embroidered fashion product।
+                Product की पूरी जानकारी और उपलब्ध
+                options देखने के लिए Amazon पर जाएँ।
+
+            </p>
+
+
+            <div class="price">
+
+                Amazon पर वर्तमान कीमत देखें
+
+            </div>
+
+
+            <h2>
+                Product Information
+            </h2>
+
+
+            <ul>
+
+                <li>
+                    Embroidered design
+                </li>
+
+                <li>
+                    Fashion wear
+                </li>
+
+                <li>
+                    अलग-अलग size options उपलब्ध हो सकते हैं
+                </li>
+
+                <li>
+                    उपलब्धता और कीमत Amazon पर देखें
+                </li>
+
+            </ul>
+
+
+            <!-- AMAZON AFFILIATE BUTTON -->
+
+            <a
+                href="https://www.amazon.in/gp/product/B0HBBK3DQ7?smid=A1WYWER0W24N8S&th=1&psc=1&linkCode=ll2&tag=n02a0-21&linkId=67adc1ddd5aa7f0a437ab5ff88537750&ref_=as_li_ss_tl"
+                class="amazon-btn"
+                target="_blank"
+                rel="nofollow sponsored">
+
+                🛒 Amazon पर देखें
+
+            </a>
+
+
+            <!-- AFFILIATE DISCLOSURE -->
+
+            <div class="note">
+
+                <strong>
+                    Affiliate Disclosure:
+                </strong>
+
+                <br>
+
+                इस website पर कुछ links
+                affiliate links हो सकते हैं।
+                Eligible purchase होने पर
+                हमें commission मिल सकता है।
+
+            </div>
+
+
+        </div>
+
+    </div>
+
 </div>
 
 
-<div class="categories">
-
-    <button onclick="filterCategory('all')">
-        All
-    </button>
-
-    <button onclick="filterCategory('mobile')">
-        📱 Mobile
-    </button>
-
-    <button onclick="filterCategory('electronics')">
-        💻 Electronics
-    </button>
-
-    <button onclick="filterCategory('fashion')">
-        👕 Fashion
-    </button>
-
-    <button onclick="filterCategory('home')">
-        🏠 Home
-    </button>
-
-</div>
-
-
-<section class="products" id="products">
-
-
-    <div class="product" data-category="mobile">
-
-        <div class="image">📱</div>
-
-        <h3>Smartphone</h3>
-
-        <p>Latest smartphone category</p>
-
-        <div class="price">₹ Price देखें</div>
-
-        <a href="#"
-           class="btn"
-           target="_blank"
-           rel="nofollow sponsored">
-           🛒 Amazon पर देखें
-        </a>
-
-    </div>
-
-
-    <div class="product" data-category="electronics">
-
-        <div class="image">🎧</div>
-
-        <h3>Wireless Headphones</h3>
-
-        <p>Music और entertainment के लिए</p>
-
-        <div class="price">₹ Price देखें</div>
-
-        <a href="#"
-           class="btn"
-           target="_blank"
-           rel="nofollow sponsored">
-           🛒 Amazon पर देखें
-        </a>
-
-    </div>
-
-
-    <div class="product" data-category="electronics">
-
-        <div class="image">⌚</div>
-
-        <h3>Smart Watch</h3>
-
-        <p>Smart watch category</p>
-
-        <div class="price">₹ Price देखें</div>
-
-        <a href="#"
-           class="btn"
-           target="_blank"
-           rel="nofollow sponsored">
-           🛒 Amazon पर देखें
-        </a>
-
-    </div>
-
-
-    <div class="product" data-category="fashion">
-
-        <div class="image">👕</div>
-
-        <h3>Men's T-Shirt</h3>
-
-        <p>Fashion और daily wear</p>
-
-        <div class="price">₹ Price देखें</div>
-
-        <a href="#"
-           class="btn"
-           target="_blank"
-           rel="nofollow sponsored">
-           🛒 Amazon पर देखें
-        </a>
-
-    </div>
-
-
-    <div class="product" data-category="fashion">
-
-        <div class="image">👟</div>
-
-        <h3>Sports Shoes</h3>
-
-        <p>Sports shoes category</p>
-
-        <div class="price">₹ Price देखें</div>
-
-        <a href="#"
-           class="btn"
-           target="_blank"
-           rel="nofollow sponsored">
-           🛒 Amazon पर देखें
-        </a>
-
-    </div>
-
-
-    <div class="product" data-category="home">
-
-        <div class="image">🏠</div>
-
-        <h3>Home Accessories</h3>
-
-        <p>Useful home products</p>
-
-        <div class="price">₹ Price देखें</div>
-
-        <a href="#"
-           class="btn"
-           target="_blank"
-           rel="nofollow sponsored">
-           🛒 Amazon पर देखें
-        </a>
-
-    </div>
-
-
-</section>
-
-
-<div id="noResult">
-    ❌ कोई product नहीं मिला।
-</div>
-
+<!-- FOOTER -->
 
 <footer>
-    <p>© 2026 Zappoza. All Rights Reserved.</p>
+
+    <h3>
+        Zappoza
+    </h3>
 
     <p>
-        Affiliate Disclosure: कुछ links affiliate links हो सकते हैं।
+        Useful products aur shopping information.
     </p>
+
+    <p>
+        © 2026 Zappoza
+    </p>
+
 </footer>
 
 
-<script>
-
-    const searchBox = document.getElementById("searchBox");
-
-    const products = document.querySelectorAll(".product");
-
-    const noResult = document.getElementById("noResult");
-
-
-    searchBox.addEventListener("input", function() {
-
-        const searchText = this.value.toLowerCase();
-
-        let found = 0;
-
-
-        products.forEach(function(product) {
-
-            const productText =
-                product.innerText.toLowerCase();
-
-
-            if (productText.includes(searchText)) {
-
-                product.style.display = "block";
-
-                found++;
-
-            } else {
-
-                product.style.display = "none";
-
-            }
-
-        });
-
-
-        noResult.style.display =
-            found === 0 ? "block" : "none";
-
-    });
-
-
-    function filterCategory(category) {
-
-        let found = 0;
-
-
-        products.forEach(function(product) {
-
-            if (
-                category === "all" ||
-                product.dataset.category === category
-            ) {
-
-                product.style.display = "block";
-
-                found++;
-
-            } else {
-
-                product.style.display = "none";
-
-            }
-
-        });
-
-
-        noResult.style.display =
-            found === 0 ? "block" : "none";
-
-    }
-
-</script>
-
 </body>
+
 </html>
+```
